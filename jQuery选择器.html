@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#one").css("background","#EED2EE");
+				$(".mini").css("background","#EEEE00");//所有class为mini的元素将背景颜色设置为黄色，原本是灰色
+				$("div").css("background","#EE2C2C");//改变元素名是<div>的所有元素的背景色
+				$(".hide").css("display","block");//改变class为hide的元素将display设置为块级元素，此元素前后会带有换行符。
+				$("span, #two").css("background","#E0FFFF");//改变所有的<span>元素和id为two的元素的背景色
+				$(".one + div").css("background","#CAFF70");//改变class为one的下一个同级别<div>元素背景色
+				$("#two~div").css("background","#FF00FF");//改变id为two的元素后面的所有<div>兄弟元素的背景色
+				$("div:contains(di)").css("background","#A0522D");//选取所有含文本"di"的<div>元素的背景色
+				$("div:empty").css("background","#87CEFF");//改变所有不包含子元素(包括不包含任何文本)的div空元素的背景色
+				$("div:has(.mini)").css("background","#EE9A00");//改变还有class为mini元素的<div>元素的背景色
+				$("div:parent").css("background","#bbffaa");//改变含有子元素（包含文本元素）的<div>元素的背景色
+				$("div:hidden").show(3000);//显示隐藏的div元素，show()是jquery方法，功能室显示元素，3000是时间，单位为毫秒
+				$("div[class][title^='tesst']").css("background","#CFCFCF");//选取拥有属性class，并且属性title以"tesst"开始的<div>元素
+				$("div[title!=tesst]").css("background","#EE1289");//改变属性title不等于tesst的<div>元素(注意：没有属性title的<div>元素也会被选取)
+				$("div[title$=test]").css("background","#B23AEE");//改变属性title含有test结尾的<div>元素
+				$("div[title*=other]").css("background","#54FF9F");//选择属性title含有"other"的<div>元素
+				$("div.one :nth-child(2)").css("background","#FF7F50");//选取每个class为one的<div>父元素的第2个子元素的背景色
+				$("div.one :only-child").css("background","#EEEE00");//如果class为one的<div>父元素下只有一个子元素，那么则改变它
+			})
+		</script>
+		<style type="text/css">
+			div,span,p{
+				width: 140px;
+				height: 140px;
+				margin: 5px;
+				background-color: antiquewhite;/*皮肤色*/
+				border:#000 1px solid;
+				float: left;
+				font-size: 17px;
+				font-family: verdana;
+			}
+			div.mini{
+				width: 55px;
+				height: 55px;
+				background-color: #808080;
+				font-size: 12px;
+			}
+			div.hide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one" id="one">id为one,class为one的div
+			<div class="mini">class为mini</div>
+		</div>
+		<div class="one" id="two" title="test">id为two,class为one，title为test的div
+			<div class="mini" title="other">class为mini,title为other</div>
+			<div class="mini" title="test">class为mini,title为test</div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini"></div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini" title="tesst">class为mini,title为tesst</div>
+		</div>
+		<div style="display:none;" class="none">style的display为"none"的div</div>
+		<div class="hide">class为"hide"的div</div>
+		<div>
+			包含input的type为"hidden"的div <input type="hidden" size="8" />
+		</div>
+		<span id="mover">
+			正在执行动画的span元素
+		</span>
+	</body>
+</html>

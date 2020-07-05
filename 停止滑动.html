@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#div1 .dt1").click(function(){
+					$("dd").slideToggle(3000,function(){//这个function是回调函数，在滑动100%运行完后执行
+						alert("滑动完了");
+					});
+				});
+				$(".btn1").click(function(){
+					$("dd").stop();
+				});
+				$(".dt1").mouseenter(function(){
+					$(".dt1").css("cursor","pointer");
+				});
+			});
+		</script>
+		<style type="text/css">
+			#div1{
+				margin-top: -10px;
+				width: 200px;
+			}
+			#div1>dl>dt{
+				background-color: coral;
+				line-height: 30px;
+				height: 30px;
+			}
+			#div1 dl dd{
+				background-color: lightyellow;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" class="btn1">停止动画</button>
+		<div id="div1">
+			<dl>
+				<dt class="dt1">点我向下滑动</dt>
+				<dd>战国策春秋左氏传</dd>
+				<dd>竹本纪年</dd>
+				<dd>吕氏春秋</dd>
+				<dd>淮南子</dd>
+			</dl>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+			var item = document.getElementById("tb");
+			var tbody = item.getElementsByTagName("tbody")[0]; //获取表格的第1个tbody元素
+			var trs = tbody.getElementsByTagName("tr");
+			for(var i = 0; i < trs.length;i++){
+				if(i%2==0){
+					trs[i].style.backgroundColor = "red";
+				}
+			}
+		}	
+		</script>
+	</head>
+	<body>
+		<table id="tb">
+			<tbody>
+				<tr>
+					<td>第一行</td>
+					<td>第一行</td>
+				</tr>
+				<tr>
+					<td>第二行</td>
+					<td>第二行</td>
+				</tr>
+				<tr>
+					<td>第三行</td>
+					<td>第三行</td>
+				</tr>
+				<tr>
+					<td>第四行</td>
+					<td>第四行</td>
+				</tr>
+				<tr>
+					<td>第五行</td>
+					<td>第五行</td>
+				</tr>
+				<tr>
+					<td>第六行</td>
+					<td>第六行</td>
+				</tr>					
+			</tbody>
+		</table>
+	</body>
+</html>

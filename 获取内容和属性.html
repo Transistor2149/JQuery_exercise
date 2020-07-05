@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".btn1").click(function(){
+					alert("值为：" + $("#Val").val());//获取值
+					//text() - 设置或返回所选元素的文本内容
+					// html() - 设置或返回所选元素的内容（包括 HTML 标记）
+					// val() - 设置或返回表单字段的值
+				});
+				$(".btn2").click(function(){
+					console.log($("#AcFun").attr("href"));//attr() 方法用于获取属性值。
+					console.log($("#AcFun").attr("id"));
+					// 对于 HTML 元素本身就带有的固有属性，在处理时，使用 prop 方法。
+					// 对于 HTML 元素我们自己自定义的 DOM 属性，在处理时，使用 attr 方法。
+				})
+			});
+			$(function(){
+				$("#btn1").click(function(){
+					$(".test1").text("Hello World!");
+				});
+				$("#btn2").click(function(){
+					$(".test2").html("<h3>Hello World!</h3>");
+				});
+				$("#btn3").click(function(){
+					$("#input").val("缺B乐");
+				});
+			});
+			$(function(){
+				$(".btn3").click(function(){
+					$("#AF").attr({/*attr可以获取内容，也可以更改/设置属性值*/
+						href:'https://www.bilibili.com/',
+						title:'哔哩哔哩'
+					}).text("哔哩哔哩");
+					// 通过修改的 title 值来修改链接名称
+					// titles = $("#AF").attr('title');
+					// $("#AF").html(titles);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			<input type="text" id="Val" value="获取方框中的值" />
+		</p>
+		<button type="button" class="btn1">获取值</button>
+		<p><a href="https://www.acfun.cn/" id="AcFun">缺B乐</a></p>
+		<button type="button" class="btn2">显示href属性的值</button>
+		
+		<p class="test1">这是一个段落</p>
+		<p class="test2">这是另外一个段落</p>
+		<p>输入框：<input type="text" id="input" value="设置属性的值" /></p>
+		<button id="btn1">设置文本</button>
+		<button id="btn2">设置 HTML</button>
+		<button id="btn3">设置值</button>
+		
+		<p><a href="https://www.acfun.cn/" id="AF">缺B乐</a></p>
+		<button class="btn3">修改 href 和 title</button>
+	</body>
+</html>

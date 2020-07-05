@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn_getAttr").click(function(){
+					var str = "<br\>" + $("#company_info").attr("title");
+					str+="<br\>" + $("#product_info").attr("href");
+					str+="<br\>" + $("#culture_info").attr("id");
+					str+="<br\>" + $("#btn_getAttr").attr("value");
+					str+="<br\>" + $("#contactus").attr("id");
+					$("#attr_info").append(str);
+				});
+				$("#btn_setAttr").click(function(){
+					$("#company_info").attr("title","公司的发展历程和发展经验");
+					$("#product_info").attr("href","https://www.acfun.cn/");
+					$("#culture_info").attr("id","btn_culture_info");
+					$("#contactus").attr("title","欢迎联系我们");
+					$("#btn_getAttr").attr({
+						"title":"欢迎加入"
+					})
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul id="nav">
+			<li><a href="https://www.baidu.com" id="company_info" title="公司的相关信息">公司信息</a></li>
+			<li><a href="https://www.baidu.com" id="product_info">产品简介</a></li>
+			<li><a href="https://www.baidu.com" id="culture_info">公司文化</a></li>
+			<li><a href="https://www.baidu.com" id="contactus">联系我们</a></li>
+		</ul>
+		<div id="content"></div>
+		<!-- 属性信息显示如下 -->
+		<div id="attr_info">
+			<input type="button" id="btn_getAttr" value="显示属性信息">
+			<input type="button" id="btn_setAttr" value="设置属性信息">
+		</div>
+	</body>
+</html>

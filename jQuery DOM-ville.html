@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#move_up").click(function(){
+					$("#change_me").animate({top:30},200);
+				});//end move_up
+				$("#move_down").click(function(){
+					$("#change_me").animate({top:500},2000);
+				});//end move_down
+				$("#color").click(function(){
+					$("#change_me").css("color","blue");
+				});//end color
+				$("#disappear").click(function(){
+					$("#change_me").toggle("slow");//切换元素的可见状态，如果元素可见则隐藏，如果元素隐藏则可见，当前速度为slow(慢)
+				});//end disappear
+			})//end doc ready
+		</script>
+		<style type="text/css">
+			#change_me{
+				position:absolute;
+				top:100px;
+				left:400px;
+				font:24px arial;
+			}
+			#move_down #move_up #color #disappear{
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="move_up">Move Up!</button>
+		<button id="move_down">Move Down</button>
+		<button id="color">Change Color</button>
+		<button id="disappear">Disappear/Re-appear</button>
+		
+		<div id="change_me">Make me do Stuff!</div>
+	</body>
+</html>

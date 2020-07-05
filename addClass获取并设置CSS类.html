@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input").focus(function(){//当元素获取焦点时触发的focus
+					$(this).addClass("focus");//addClass不要加.
+				});
+				$("input").blur(function(){//当元素失去焦点时发生 blur 事件。
+					$("input").removeClass("focus");//清除样式
+				});
+				$("#btn1").click(function(){
+					$("h3").toggleClass("color fz");
+				});
+			});
+		</script>
+		<style type="text/css">
+			.focus{
+				border:1px solid #6495ED;
+				background: #008000;
+			}
+			.color{
+				background-color: #00FFFF;
+				color: #FF7F50;
+			}
+			.fz{
+				font-size: 30px;
+				font-family: "楷体";/* 改变字体样式 */
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" method="">
+			<fieldset id="">
+				<legend>登录界面</legend>
+				<div id="">
+					<label for="username">用户：</label>
+					<input type="text" id="username"/>
+				</div>
+				<div>
+					<label for="pass">密码：</label>
+					<input type="password" id="pass">
+				</div>
+			</fieldset>
+			<h3>这是标题</h3>
+			<button type="button" id="btn1">单击切换颜色样式</button>
+		</form>
+	</body>
+</html>

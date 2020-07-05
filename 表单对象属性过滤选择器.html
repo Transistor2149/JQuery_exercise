@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#form1 input:enabled").val("这里变化了！");//改变表单内可用的<input>元素的值
+				$("#form1 input:disabled").val("不可用文本框的变化");//改变表单内不可用<input>元素的值
+				$("#form1 input").dblclick(function(){
+					alert("input可用元素被双击了！")
+				})
+				$("#keyong1").keydown(function(){//keydown - 键按下的过程
+					$("#keyong1").css("background-color","yellow");
+				});
+				$("#keyong1").keyup(function(){//keyup - 键被松开
+					$("#keyong1").css("background-color","white");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<form action="" id="form1">
+			可用元素：<input name="add" value="可用文本框" id="keyong1"><br>
+			不可用元素：<input name="email" disabled="disabled" value="不可用文本框"><br><!-- disabled 属性规定应该禁用 input 元素。 -->
+			可用元素：<input name="che" value="可用文本框"><br>
+			不可用元素：<input name="name" disabled="disabled" value="不可用文本框"><br>
+			<br>
+			多选框：<br>
+			<input type="checkbox" name="newsletter" checked="checked" value="test1">test1
+			<input type="checkbox" name="newsletter" value="test2">test2
+			<input type="checkbox" name="newsletter" value="test3">test3
+			<input type="checkbox" name="newsletter" value="test4">test4
+			<input type="checkbox" name="newsletter" value="test5">test5
+			<div></div>
+			
+			<br><br>
+			下拉列表1：<br>
+			<select name="test" multiple="multiple" style="height: 100px;"><!-- multiple 属性规定输入字段可选择多个值。如果使用该属性，则字段可接受多个值。 -->
+				<option value="">浙江</option>
+				<option selected="selected">湖南</option>
+				<option value="">北京</option>
+				<option selected="selected">天津</option>
+				<option value="">广州</option>
+				<option value="">湖北</option>
+			</select>
+			
+			<br><br>
+			下拉列表2：<br>
+			<select name="test2">
+				<option value="">浙江</option>
+				<option value="">湖南</option>
+				<option selected="selected">北京</option><!-- selected 属性规定在页面加载时预先选定该选项。 -->
+				<option value="">天津</option>
+				<option value="">广州</option>
+				<option value="">湖北</option>
+			</select>
+		</form>
+	</body>
+</html>

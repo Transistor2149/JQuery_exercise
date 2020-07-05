@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				function check(){
+					var mail = $("#email").val();
+					if(mail == ""){
+						$(".emails").text("Email不能为空！");
+						$("#email").focus().css({"borderColor":"green"});
+						return false;
+					};
+					if(mail.indexOf("@") == -1){
+						$(".emails").text("Email格式不正确,必须包含@");
+						return false;
+					};
+					if(mail.indexOf(".") == -1){
+						$(".emails").text("Email格式不正确,必须包含.");
+						return false;
+					};
+					return true;
+				};
+				$(function(){
+					$("#myform").submit(function(){
+						return check();
+					});
+				})
+			});
+		</script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<form method="get" id="myform" name="myform">
+			<tr class="tr">
+				<td>Email:<input type="text" id="email" class="inputs" /><span class="emails"></span></td>
+			</tr>
+			<tr>
+				<td><br>密码: <input type="password" id="pwd" class="inputs" /><span class="psw"></span><br></td>
+			</tr>
+			<tr class="tr1">
+				<td style="height: 35px; padding-left: 30px;">
+					<input type="submit" name="btn" value="登录" class="rb1">
+				</td>
+			</tr>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>超连接提示</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script type="text/javascript">    
+    $(function(){
+        var x=10,y=20;
+        $("a.tooltip").mouseover(function(e){
+            this.myTitle=this.title;
+            this.title="";
+            //创建div元素
+            var $tooltip=$("<div id='tooltip'>"+this.myTitle+"</div>");
+            $("body").append($tooltip);
+            $("#tooltip")
+                .css({
+                    "position":"absolute",//这一行必须添加，否则显示错误。添加之后，IE edge会同时显示空的原提示框，chrome显示正常
+                    "top":(e.pageY+y)+"px",
+                    "left":(e.pageX+x)+"px"
+                }).show("fast");
+        })
+        .mouseout(function(){
+            this.title=this.myTitle;
+            $("#tooltip").remove();
+        }).mousemove(function(e){
+            $("#tooltip")
+                .css({
+                    "top":(e.pageY+y)+"px",
+                    "left":(e.pageX+x)+"px"
+                });
+        });
+    })
+    </script>
+</head>
+<body>
+    <p><a href="#" class="tooltip" title="这是我的超连接提示1">提示 1</a></p>
+    <p><a href="#" class="tooltip" title="这是我的超连接提示2">提示 2</a></p>
+    <p><a href="#" title="这是自带提示1">自带提示 1</a></p>
+    <p><a href="#" title="这是自带提示2">自带提示 2</a></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("span").siblings().css({"color":"red","border":"2px solid red"});//siblings() 方法返回被选元素的所有同胞元素
+			$("h2").nextUntil("h6").css({"color":"blue","border":"2px solid blue"});//nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。
+		});
+	</script>
+	<style type="text/css">
+		.siblings *{
+			display: block;
+			border: 1px solid #888888;
+			padding: 2px;
+			margin: 5px;
+			color: #888888;
+		}
+	</style>
+</head>
+<body class="siblings">
+	<div>div (父元素)
+	  <p>p</p>
+	  <span>span</span>
+	  <h2>h2</h2>
+	  <h3>h3</h3>
+	  <p>p</p>
+	</div>
+	
+	<div>div (父元素)
+	  <p>p</p>
+	  <span>span</span>
+	  <h2>h2</h2>
+	  <h3>h3</h3>
+	  <h4>h4</h4>
+	  <h5>h5</h5>
+	  <h6>h6</h6>
+	  <p>p</p>
+	</div>
+</body>
+</html>

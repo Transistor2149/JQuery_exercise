@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">//siblings方法返回被选元素的所有同级元素。(同级包含从上到下)
+			$(document).ready(function(){
+				$(".has_children").click(function(){
+					$(this).addClass("highlight")//为当前元素增加highlight类
+					.children("a").show().end()//将子节点的<a>全部显示出来，并在点击下一个的时候关闭上一个（end()没有end则无法关闭）
+					.siblings().removeClass("highlight")//siblings()获取元素的兄弟元素，并去掉他们的highlight类，此时上一个类已经关闭
+					.children("a").hide();//将兄弟元素下的<a>隐藏
+				});
+			});
+		</script>
+		<style type="text/css">
+			#menu{width: 300px;}
+			.has_children{
+				background-color:grey;
+				color:white;/*字体颜色*/
+				cursor: pointer;/*手指光标的样式*/
+			}
+			.highlight{
+			color:black;/*字体颜色*/
+			background:green;
+			}
+			div{
+				padding:0;
+				margin: 10px 0;/*外边距*/
+			}
+			div a{
+				background: #888;
+				display: none;
+				float: left;
+				width: 18.75rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<div class="has_children">
+				<span>第1章-认识jQuery</span>
+				<a href="">1.1</a>
+				<a href="">1.2</a>
+				<a href="">1.3</a>
+				<a href="">1.4</a>
+				<a href="">1.5</a>
+				<a href="">1.6</a>
+				<a href="">1.7</a>
+			</div>
+			<div class="has_children">
+				<span>第2章-jQuery选择器</span>
+				<a href="">2.1</a>
+				<a href="">2.2</a>
+				<a href="">2.3</a>
+				<a href="">2.4</a>
+				<a href="">2.5</a>
+				<a href="">2.6</a>
+				<a href="">2.7</a>
+				<a href="">2.8</a>
+			</div>
+			<div class="has_children">
+				<span>第三章-jQuery中的DOM操作</span>
+				<a href="">3.1</a>
+				<a href="">3.2</a>
+				<a href="">3.3</a>
+				<a href="">3.4</a>
+				<a href="">3.5</a>
+				<a href="">3.6</a>
+				<a href="">3.7</a>
+			</div>
+		</div>
+	</body>
+</html>

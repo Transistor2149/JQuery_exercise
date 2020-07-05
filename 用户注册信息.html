@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var $cr = $("#cr")//$("#cr")获取到复选框元素，然后通过判断复选框是否被选中，来执行下一步操作
+				var cr = $cr[0];//DOM对象，或者$cr.get(0)，这是转换为DOM对象来判断 的 写法
+				$cr.click(function(){
+					if(cr.checked){//DOM方式判断
+						alert("感谢你的支持！你可以继续操作！");
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" id="cr"/><label for="cr">同意并接受注册协议</label><!-- for规定绑定哪个表单元素的id值 -->
+	</body>
+</html>

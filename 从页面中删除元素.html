@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btnremove").click(function(){
+					var idl = $("#idtip").remove();//移除DOM对象
+					$("body").append(idl);
+				});
+				$("#btnempty").click(function(){
+					var idl = $("#idsenc").empty();
+					idl.append("这是重新添加的内容，原来的内容已被清除了")
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="idwelcome"><b>演示使用remove和empty的方法</b><br></div>
+		<div id="idtip"><b>remove方法会从DOM树中移除节点</b><br></div>
+		<div id="idsenc"><b>empty方法只是清除元素的内容</b></div>
+		<div><input type="button" name="btnremove" id="btnremove" value="remove">
+		&nbsp;
+		<input name="btnempty" type="button" id="btnempty" value="empty"></div>
+	</body>
+</html>

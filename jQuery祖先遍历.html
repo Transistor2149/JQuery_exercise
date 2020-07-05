@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("span").parent().css({"color":"red","border":"2px solid red"});//parent() 方法返回被选元素的直接父元素。
+				$("span.ps").parents("div.guolv").css({"color":"red","border":"2px solid red"});//parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。
+				//返回所有 <span> 元素的所有祖先，并且它是 class为guolv的<div> 元素：
+				$("span.untils").parentsUntil("div.Until").css({"color":"red","border":"2px solid red"});
+				//parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。
+				//这个方法返回span.untils和div.Until之间的所有祖先元素
+			});
+		</script>
+		<style type="text/css">
+			.ancestors *{/*选择class为ancestors的div元素内(之后)的所有元素*/
+				border: 2px solid lightgray;
+				margin: 15px;
+				padding: 5px;
+				color: lightgrey;
+				display: block; 
+			}
+			.guolv *{
+				border: 2px solid lightgray;
+				margin: 15px;
+				padding: 5px;
+				color: lightgrey;
+				display: block; 
+			}
+			.Until *{
+				border: 2px solid lightgray;
+				margin: 15px;
+				padding: 5px;
+				color: lightgrey;
+				display: block; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ancestors">
+			<div style="width: 500px;">div (曾祖父元素)
+				<ul>ul(祖父元素)
+					<li>li(父元素)
+						<span>span</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="guolv">
+			<div style="width: 500px;">div (曾祖父元素)
+				<ul>ul(祖父元素)
+					<li>li(父元素)
+						<span class="ps">span</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="Until">
+			<div style="width: 500px;">div (曾祖父元素)
+				<ul>ul(祖父元素)
+					<li>li(父元素)
+						<span class="untils">span</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

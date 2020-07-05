@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$(".d1").fadeIn(2000);
+					$(".d2").fadeOut(1000);
+					$(".d3").fadeToggle(2000);/*淡入淡出*/
+					$(".d1").fadeTo("slow",0.74);/*fadeTo能制定颜色的不透明度*/
+				})
+			})
+		</script>
+		<style type="text/css">
+			.d1{
+				width: 200px;
+				height: 200px;
+				background-color: #008000;
+				margin: 4px 0px;/*上下4px 左右0px*/
+				display: none;
+			}
+			.d2{
+				width: 200px;
+				height: 200px;
+				background-color: aqua;
+				margin: 0px 0px 4px 0px;
+			}
+			.d3{
+				width: 200px;
+				height: 200px;
+				background-color: brown;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" id="btn1">淡入淡出</button>
+		<div class="d1"></div>
+		<div class="d2"></div>
+		<div class="d3"></div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("h3.h3tea").click(function(){
+					$("#tea").slideToggle("slow");
+				});
+				$("h3.h3coffe").click(function(){
+					$("#coffe").slideToggle(1500);
+				});
+			});
+		</script>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 160px;
+				float: left;
+				margin: 0px 4px;
+			}
+			#div2{
+				width: 200px;
+				height: 160px;
+				float: left;
+				margin: 0px 4px;
+			}
+			h3.h3tea{
+				background-color: antiquewhite;
+				width: 200px;
+				margin: 0;
+			}
+			ol#tea{
+				width: 160px;
+				background-color: #888888;
+				margin: 3px 0px;
+				padding: 6px 20px;
+				/* display: none; */
+			}
+			h3.h3coffe{
+				background-color: antiquewhite;
+				width: 200px;
+				margin: 0px;
+			}
+			ol#coffe{
+				width: 160px;
+				background-color: #888888;
+				margin: 3px 0px;
+				padding: 6px 20px;
+				/* display: none; */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<h3 class="h3tea">茶叶选单</h3>
+			<ol type="1" id="tea">
+				<li>红茶</li>
+				<li>绿茶</li>
+				<li>乌龙茶</li>
+				<li>普洱</li>
+				<li>铁观音</li>
+			</ol>
+		</div>
+		<div id="div2">
+			<h3 class="h3coffe">咖啡选单</h3>
+			<ol type="1" id="coffe">
+				<li>蓝山咖啡</li>
+				<li>拿铁</li>
+				<li>美式咖啡</li>
+				<li>摩卡</li>
+				<li>白咖啡</li>
+			</ol>
+		</div>
+	</body>
+</html>
